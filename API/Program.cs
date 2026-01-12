@@ -1,4 +1,5 @@
 using exam_CSharp_M2_Cyber.Services;
+using exam_CSharp_M2_Cyber.Services.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -7,6 +8,7 @@ builder.Services.AddControllers();
 
 // Enregistrement du service singleton pour les produits
 builder.Services.AddSingleton<IProductService, ProductService>();
+builder.Services.AddSingleton<IOrderService, OrderService>();
 
 //Swagger
 builder.Services.AddOpenApi();

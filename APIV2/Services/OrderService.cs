@@ -6,10 +6,12 @@ namespace exam_CSharp_M2_Cyber.Services;
 public class OrderService : IOrderService
 {
     private readonly IProductService _productService;
+    private readonly IPromoCodeService _promoCodeService;
 
-    public OrderService(IProductService productService)
+    public OrderService(IProductService productService, IPromoCodeService promoCodeService)
     {
         _productService = productService;
+        _promoCodeService = promoCodeService;
     }
     
     public (OrderResponse? response, List<string> errors) CreateOrder(OrderRequest request)

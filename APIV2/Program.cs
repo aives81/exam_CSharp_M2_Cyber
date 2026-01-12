@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddScoped<IProductService, EfProductService>();
+builder.Services.AddScoped<IPromoCodeService, EfPromoCodeService>();
 
 builder.Services.AddOpenApi();
 
